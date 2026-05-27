@@ -1,4 +1,4 @@
-<p align="center">ZNE TOOL</p>
+<p align="center"># ZNE TOOL</p>
 
 <p align="center">
   <a href="https://discordapp.com/invite/4pQzcZxVXK">
@@ -9,7 +9,7 @@
 <p align="center"><b>Join the discord server.</b></p>
 
 <p align="center">
-  <img src="https://i.ibb.co/jZrhpJz1/image.png" alt="ZNE TOOL Banner" width="100%">
+  <img src="https://i.ibb.co/jZrhpJz1/image.png" alt="ZNE TOOL Banner" width="60%">
 </p>
 
 <p align="center">

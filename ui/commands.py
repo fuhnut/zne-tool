@@ -3,6 +3,7 @@ from __future__ import annotations
 _commands: dict[str, str] = {
     "/info": "monitor system resources in real-time",
     "/search": "search the web from your terminal!",
+    "/obfuscate": "obfuscate python code",
 }
 
 

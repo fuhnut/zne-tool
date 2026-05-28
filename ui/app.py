@@ -102,6 +102,10 @@ class zneapp(App):
             from ui.screens.search_screen import _searchscreen
 
             self.push_screen(_searchscreen())
+        elif raw == "/obfuscate":
+            from ui.screens.obfuscate_screen import _obfuscatescreen
+
+            self.push_screen(_obfuscatescreen())
         else:
             from ui.components.error_modal import _commanderrormodal
 

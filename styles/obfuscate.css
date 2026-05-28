@@ -1,0 +1,130 @@
+_obfuscatescreen {
+    layout: vertical;
+    align: center middle;
+    background: #0d0d0d;
+}
+
+#obf-header {
+    align: center top;
+    width: 100%;
+    height: auto;
+    margin: 1 0 0 0;
+}
+
+#obf-header > Label {
+    align: center top;
+    width: 100%;
+    text-align: center;
+}
+
+#obf-subtitle {
+    width: 100%;
+    text-align: center;
+    color: #bb88ff;
+    text-style: bold;
+    margin: 0 0 1 0;
+}
+
+#obf-body {
+    width: 100%;
+    height: 1fr;
+    padding: 0 2;
+}
+
+#obf-tree-area {
+    width: 50%;
+    height: 100%;
+    border: tall #332244;
+    background: #1a1a2e;
+}
+
+#obf-tree {
+    width: 100%;
+    height: 100%;
+}
+
+#obf-controls {
+    width: 50%;
+    height: 100%;
+    padding: 0 2;
+    scrollbar-size: 1 1;
+}
+
+#obf-search {
+    width: 100%;
+    height: 3;
+    background: #1a1a2e;
+    border: solid #332244;
+    padding: 0 2;
+    color: #e0d0ff;
+}
+
+#obf-search:focus {
+    border: solid #7755cc;
+    background: #1e1e36;
+}
+
+#obf-search .input--placeholder {
+    color: #554477;
+}
+
+#obf-source {
+    width: 100%;
+    height: 3;
+    background: #1a1a2e;
+    border: solid #332244;
+    padding: 0 2;
+    color: #e0d0ff;
+    margin-top: 1;
+}
+
+#obf-source:focus {
+    border: solid #7755cc;
+    background: #1e1e36;
+}
+
+#obf-source .input--placeholder {
+    color: #554477;
+}
+
+#obf-output {
+    width: 100%;
+    height: 3;
+    background: #1a1a2e;
+    border: solid #332244;
+    padding: 0 2;
+    color: #e0d0ff;
+    margin-top: 1;
+}
+
+#obf-output:focus {
+    border: solid #7755cc;
+    background: #1e1e36;
+}
+
+#obf-output .input--placeholder {
+    color: #554477;
+}
+
+#obf-build {
+    width: 100%;
+    height: 3;
+    margin-top: 1;
+}
+
+#obf-data {
+    width: 100%;
+    margin-top: 1;
+}
+
+#obf-footer {
+    dock: bottom;
+    width: 100%;
+    height: auto;
+    padding: 0 0 1 2;
+}
+
+#obf-back-hint {
+    text-align: left;
+    color: #554477;
+}

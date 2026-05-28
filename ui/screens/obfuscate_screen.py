@@ -13,6 +13,7 @@ from textual.widgets import (
     DirectoryTree,
     Input,
     Label,
+    Switch,
 )
 
 _COLOURS = (
@@ -124,6 +125,23 @@ class _obfuscatescreen(Screen):
                     placeholder="output path (optional)",
                     id="obf-output",
                 )
+                with Horizontal(id="obf-toggle-row"):
+                    yield Switch(id="obf-strings", value=False)
+                    yield Label("encrypt strings", id="obf-strings-label")
+                with Horizontal(id="obf-toggle-row-2"):
+                    yield Switch(id="obf-layers", value=False)
+                    yield Label("multi-layer", id="obf-layers-label")
+                with Horizontal(id="obf-toggle-row-3"):
+                    yield Switch(id="obf-junk", value=True)
+                    yield Label("junk code", id="obf-junk-label")
+                yield Input(
+                    placeholder="expire (unix timestamp, optional)",
+                    id="obf-expire",
+                )
+                yield Input(
+                    placeholder="bind to hostname (optional)",
+                    id="obf-bind",
+                )
                 yield Button("BUILD", id="obf-build", variant="primary")
                 yield Label("", id="obf-data")
         with Vertical(id="obf-footer"):
@@ -146,6 +164,11 @@ class _obfuscatescreen(Screen):
         self._source_input = self.query_one("#obf-source", Input)
         self._output_input = self.query_one("#obf-output", Input)
         self._search_input = self.query_one("#obf-search", Input)
+        self._strings_switch = self.query_one("#obf-strings", Switch)
+        self._layers_switch = self.query_one("#obf-layers", Switch)
+        self._junk_switch = self.query_one("#obf-junk", Switch)
+        self._expire_input = self.query_one("#obf-expire", Input)
+        self._bind_input = self.query_one("#obf-bind", Input)
         self._tree = self.query_one(_pyfiltertree)
         self._search_worker = None
         self.run_worker(self._animate_header())
@@ -225,7 +248,15 @@ class _obfuscatescreen(Screen):
         try:
             from core.packer import run as pack_run
 
-            pack_run(src, out)
+            pack_run(
+                src,
+                out,
+                encrypt_strings=self._strings_switch.value,
+                layers=2 if self._layers_switch.value else 1,
+                junk=8 if self._junk_switch.value else 0,
+                expire=self._expire_input.value.strip() or None,
+                bind_host=self._bind_input.value.strip() or None,
+            )
         except FileNotFoundError:
             self._data_label.update(
                 Text(f"file not found: {source_path}", style="#ff4444"),

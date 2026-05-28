@@ -1,0 +1,16 @@
+Screen {
+    background: #0d0d0d;
+    align: center top;
+}
+
+#logo-area {
+    align: center top;
+    width: 100%;
+    height: auto;
+}
+
+#logo-area > Label {
+    align: center top;
+    width: 100%;
+    text-align: center;
+}

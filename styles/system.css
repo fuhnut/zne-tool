@@ -1,0 +1,48 @@
+_systemscreen {
+    layout: vertical;
+    align: center middle;
+    background: #0d0d0d;
+}
+
+#sys-header {
+    align: center top;
+    width: 100%;
+    height: auto;
+    margin: 1 0 0 0;
+}
+
+#sys-header > Label {
+    align: center top;
+    width: 100%;
+    text-align: center;
+}
+
+#sys-subtitle {
+    width: 100%;
+    text-align: center;
+    color: #7755aa;
+    text-style: bold;
+    margin: 0 0 1 0;
+}
+
+#sys-scroll {
+    height: 1fr;
+    width: 90%;
+    align: center top;
+    padding: 0 2;
+}
+
+#sys-data {
+    width: 100%;
+}
+
+#sys-footer {
+    dock: bottom;
+    width: 100%;
+    height: auto;
+    padding: 0 0 1 2;
+}
+
+#sys-back-hint {
+    text-align: left;
+}

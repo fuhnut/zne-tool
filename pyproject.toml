@@ -1,7 +1,15 @@
 [project]
 name = "zne-tool"
-version = "0.1.0"
+version = "0.0.1"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "colorama>=0.4.6",
+    "msgspec>=0.21.1",
+    "psutil>=7.2.2",
+    "textual",
+    "uvloop>=0.22.1",
+    "ddgs>=7.0.0",
+    "pysimdjson>=5.0.0",
+]

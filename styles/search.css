@@ -1,0 +1,72 @@
+_searchscreen {
+    layout: vertical;
+    align: center middle;
+    background: #0d0d0d;
+}
+
+#search-header {
+    align: center top;
+    width: 100%;
+    height: auto;
+    margin: 1 0 0 0;
+}
+
+#search-header > Label {
+    align: center top;
+    width: 100%;
+    text-align: center;
+}
+
+#search-subtitle {
+    width: 100%;
+    text-align: center;
+    color: #7755aa;
+    text-style: bold;
+    margin: 0 0 1 0;
+}
+
+#search-input-area {
+    width: 100%;
+    align: center middle;
+    padding: 0 0 1 0;
+}
+
+#search-input {
+    width: 80%;
+    height: 3;
+    background: #1a1a2e;
+    border: tall #332244;
+    padding: 0 2;
+    color: #e0d0ff;
+}
+
+#search-input:focus {
+    border: tall #7755cc;
+    background: #1e1e36;
+}
+
+#search-input .input--placeholder {
+    color: #554477;
+}
+
+#search-scroll {
+    height: 1fr;
+    width: 90%;
+    align: center top;
+    padding: 0 2;
+}
+
+#search-data {
+    width: 100%;
+}
+
+#search-footer {
+    dock: bottom;
+    width: 100%;
+    height: auto;
+    padding: 0 0 1 2;
+}
+
+#search-back-hint {
+    text-align: left;
+}

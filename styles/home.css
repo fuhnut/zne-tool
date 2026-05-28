@@ -1,0 +1,108 @@
+Screen {
+    layout: vertical;
+    align: center middle;
+}
+
+#logo-area {
+    align: center top;
+    width: 100%;
+    height: auto;
+    margin: 2 0 0 0;
+}
+
+#logo-area > Label {
+    align: center top;
+    width: 100%;
+    text-align: center;
+}
+
+#subtitle {
+    width: 100%;
+    text-align: center;
+    color: #7755aa;
+    margin: 1 0 2 0;
+    text-style: italic;
+}
+
+#search-area {
+    align: center bottom;
+    width: 100%;
+    height: auto;
+    padding: 0 0 1 0;
+}
+
+_searchbar {
+    width: 80%;
+    height: 3;
+    margin: 0 0 1 0;
+    background: #1a1a2e;
+    border: tall #332244;
+    padding: 0 2;
+    color: #e0d0ff;
+}
+
+_searchbar:focus {
+    border: tall #7755cc;
+    background: #1e1e36;
+}
+
+_searchbar .input--placeholder {
+    color: #554477;
+}
+
+#suggestion-list {
+    width: 80%;
+    align: center top;
+    background: #1a1a2e;
+    border: tall #332244;
+    max-height: 8;
+    overflow: hidden;
+    padding: 0;
+}
+
+Button.suggestion-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #e0d0ff;
+    text-align: left;
+    padding: 0 2;
+}
+
+Button.suggestion-btn:hover {
+    background: #2a2a4e;
+}
+
+#quit-area {
+    dock: bottom;
+    width: 100%;
+    height: auto;
+    padding: 0 0 1 2;
+}
+
+#quit-hint {
+    text-align: left;
+}
+
+#error-modal {
+    align: center middle;
+    width: auto;
+    height: auto;
+    background: #1a1a2e;
+    border: tall #ff4444;
+    padding: 1 2;
+}
+
+#error-close-btn {
+    width: 3;
+    height: 1;
+    align: right top;
+    margin: 0 0 1 0;
+}
+
+#error-msg {
+    width: 100%;
+    text-align: center;
+    color: #ff6666;
+    padding: 0 0 1 0;
+}

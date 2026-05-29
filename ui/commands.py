@@ -4,6 +4,7 @@ _commands: dict[str, str] = {
     "/info": "monitor system resources in real-time",
     "/search": "search the web from your terminal!",
     "/obfuscate": "obfuscate python code",
+    "/api": "test REST APIs with persistence",
 }
 
 

@@ -1,0 +1,175 @@
+_apiscreen {
+    layout: vertical;
+    align: center middle;
+    background: #0d0d0d;
+}
+
+#api-header {
+    align: center top;
+    width: 100%;
+    height: auto;
+    margin: 1 0 0 0;
+}
+
+#api-header > Label {
+    align: center top;
+    width: 100%;
+    text-align: center;
+}
+
+#api-subtitle {
+    width: 100%;
+    text-align: center;
+    color: #bb88ff;
+    text-style: bold;
+    margin: 0 0 1 0;
+}
+
+#api-body {
+    width: 100%;
+    height: 1fr;
+    padding: 0 2;
+    scrollbar-size: 1 1;
+}
+
+#api-method-row {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#api-method {
+    width: 14;
+    height: 3;
+}
+
+#api-url {
+    width: 1fr;
+    height: 3;
+    background: #1a1a2e;
+    border: solid #332244;
+    padding: 0 2;
+    color: #e0d0ff;
+}
+
+#api-url:focus {
+    border: solid #7755cc;
+    background: #1e1e36;
+}
+
+#api-url .input--placeholder {
+    color: #554477;
+}
+
+#api-name {
+    width: 100%;
+    height: 3;
+    background: #1a1a2e;
+    border: solid #332244;
+    padding: 0 2;
+    color: #e0d0ff;
+    margin-bottom: 1;
+}
+
+#api-name:focus {
+    border: solid #7755cc;
+    background: #1e1e36;
+}
+
+#api-name .input--placeholder {
+    color: #554477;
+}
+
+#api-auth-row {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#api-auth-type {
+    width: 20;
+    height: 3;
+}
+
+#api-auth-value {
+    width: 1fr;
+    height: 3;
+    background: #1a1a2e;
+    border: solid #332244;
+    padding: 0 2;
+    color: #e0d0ff;
+}
+
+#api-auth-value:focus {
+    border: solid #7755cc;
+    background: #1e1e36;
+}
+
+#api-auth-value .input--placeholder {
+    color: #554477;
+}
+
+#api-headers {
+    width: 100%;
+    height: 3;
+    background: #1a1a2e;
+    border: solid #332244;
+    padding: 0 2;
+    color: #e0d0ff;
+    margin-bottom: 1;
+}
+
+#api-headers:focus {
+    border: solid #7755cc;
+    background: #1e1e36;
+}
+
+#api-headers .input--placeholder {
+    color: #554477;
+}
+
+#api-body-input {
+    width: 100%;
+    height: 3;
+    background: #1a1a2e;
+    border: solid #332244;
+    padding: 0 2;
+    color: #e0d0ff;
+    margin-bottom: 1;
+}
+
+#api-body-input:focus {
+    border: solid #7755cc;
+    background: #1e1e36;
+}
+
+#api-body-input .input--placeholder {
+    color: #554477;
+}
+
+#api-btn-row {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#api-btn-row > Button {
+    margin: 0 1;
+}
+
+#api-data {
+    width: 100%;
+    margin-top: 1;
+}
+
+#api-footer {
+    dock: bottom;
+    width: 100%;
+    height: auto;
+    padding: 0 0 1 2;
+}
+
+#api-back-hint {
+    text-align: left;
+    color: #554477;
+}

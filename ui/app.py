@@ -106,6 +106,10 @@ class zneapp(App):
             from ui.screens.obfuscate_screen import _obfuscatescreen
 
             self.push_screen(_obfuscatescreen())
+        elif raw == "/api":
+            from ui.screens.api_screen import _apiscreen
+
+            self.push_screen(_apiscreen())
         else:
             from ui.components.error_modal import _commanderrormodal
 

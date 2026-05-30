@@ -3,39 +3,11 @@ from pathlib import Path
 
 from rich.text import Text
 from textual.app import App, ComposeResult
-from textual.containers import Vertical
+from textual.containers import Vertical, VerticalScroll
 from textual.widgets import Button, Label
 
+from core.theme import all_themes, gradient_colours, load_theme, variable_defaults
 from ui.components.home import _searchbar
-
-_COLOURS = (
-    "#ff1111",
-    "#ff2244",
-    "#ff1166",
-    "#ff0088",
-    "#dd2299",
-    "#bb33aa",
-    "#9922bb",
-    "#8822cc",
-    "#7722dd",
-    "#6622ee",
-    "#5522ff",
-    "#4422ff",
-    "#3322ff",
-    "#4422ff",
-    "#5522ff",
-    "#6622ff",
-    "#7722ff",
-    "#8822ee",
-    "#9922dd",
-    "#bb22cc",
-    "#dd22aa",
-    "#ff1199",
-    "#ff2277",
-    "#ff1155",
-    "#ff1133",
-    "#ff1111",
-)
 
 
 class zneapp(App):
@@ -54,25 +26,33 @@ class zneapp(App):
         "╚══════╝╚═╝░░╚══╝╚══════╝",
     )
 
+    def get_theme_variable_defaults(self) -> dict[str, str]:
+        return variable_defaults()
+
     def compose(self) -> ComposeResult:
         with Vertical(id="logo-area"):
             for i, line in enumerate(self._logo_lines):
                 yield Label(Text(line), id=f"logo-{i}")
         with Vertical(id="search-area"):
             yield _searchbar()
-            with Vertical(id="suggestion-list"):
+            with VerticalScroll(id="suggestion-list"):
                 pass
         with Vertical(id="quit-area"):
             yield Label(self._quit_text, id="quit-hint")
 
     def _gradient_text(self, line: str, offset: int) -> Text:
         text = Text()
+        colours = gradient_colours()
+        n = len(colours)
         for k, char in enumerate(line):
-            colour = _COLOURS[(k + offset) % 26]
+            colour = colours[(k + offset) % n]
             text.append(char, style=colour)
         return text
 
     async def on_mount(self) -> None:
+        for name, theme in all_themes().items():
+            self.register_theme(theme)
+        self.theme = load_theme()
         self.run_worker(self._animate_logo_colours())
         self.query_one("#suggestion-list").display = False
 
@@ -82,11 +62,13 @@ class zneapp(App):
         logo_labels = tuple(
             self.query_one(f"#logo-{i}", Label) for i in range(len(self._logo_lines))
         )
+        colours = gradient_colours()
+        n = len(colours)
         while True:
             for i, line in enumerate(self._logo_lines):
                 logo_labels[i].update(self._gradient_text(line, offset))
             quit_label.update(self._gradient_text(self._quit_text, offset))
-            offset = (offset + 1) % 26
+            offset = (offset + 1) % n
             await asyncio.sleep(0.08)
 
     def execute_command(self, cmd: str) -> None:
@@ -110,6 +92,18 @@ class zneapp(App):
             from ui.screens.api_screen import _apiscreen
 
             self.push_screen(_apiscreen())
+        elif raw == "/codec":
+            from ui.screens.codec_screen import _codecscreen
+
+            self.push_screen(_codecscreen())
+        elif raw == "/qr":
+            from ui.screens.qr_screen import _qrscreen
+
+            self.push_screen(_qrscreen())
+        elif raw == "/theme":
+            from ui.screens.theme_screen import _themescreen
+
+            self.push_screen(_themescreen())
         else:
             from ui.components.error_modal import _commanderrormodal
 
@@ -119,13 +113,13 @@ class zneapp(App):
     def _clear_search(self) -> None:
         search = self.query_one(_searchbar)
         search.value = ""
-        suggestions = self.query_one("#suggestion-list", Vertical)
+        suggestions = self.query_one("#suggestion-list", VerticalScroll)
         suggestions.remove_children()
         suggestions.display = False
 
     def on_input_changed(self, event: _searchbar.Changed) -> None:
         value = event.value
-        suggestions = self.query_one("#suggestion-list", Vertical)
+        suggestions = self.query_one("#suggestion-list", VerticalScroll)
         suggestions.remove_children()
         if not value.startswith("/"):
             suggestions.display = False

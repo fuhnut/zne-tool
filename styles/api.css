@@ -1,7 +1,7 @@
 _apiscreen {
     layout: vertical;
     align: center middle;
-    background: #0d0d0d;
+    background: $bg;
 }
 
 #api-header {
@@ -20,7 +20,7 @@ _apiscreen {
 #api-subtitle {
     width: 100%;
     text-align: center;
-    color: #bb88ff;
+    color: $accent2;
     text-style: bold;
     margin: 0 0 1 0;
 }
@@ -46,38 +46,38 @@ _apiscreen {
 #api-url {
     width: 1fr;
     height: 3;
-    background: #1a1a2e;
-    border: solid #332244;
+    background: $input-bg;
+    border: solid $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
 }
 
 #api-url:focus {
-    border: solid #7755cc;
-    background: #1e1e36;
+    border: solid $accent;
+    background: $input-bg-focus;
 }
 
 #api-url .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #api-name {
     width: 100%;
     height: 3;
-    background: #1a1a2e;
-    border: solid #332244;
+    background: $input-bg;
+    border: solid $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
     margin-bottom: 1;
 }
 
 #api-name:focus {
-    border: solid #7755cc;
-    background: #1e1e36;
+    border: solid $accent;
+    background: $input-bg-focus;
 }
 
 #api-name .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #api-auth-row {
@@ -94,57 +94,57 @@ _apiscreen {
 #api-auth-value {
     width: 1fr;
     height: 3;
-    background: #1a1a2e;
-    border: solid #332244;
+    background: $input-bg;
+    border: solid $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
 }
 
 #api-auth-value:focus {
-    border: solid #7755cc;
-    background: #1e1e36;
+    border: solid $accent;
+    background: $input-bg-focus;
 }
 
 #api-auth-value .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #api-headers {
     width: 100%;
     height: 3;
-    background: #1a1a2e;
-    border: solid #332244;
+    background: $input-bg;
+    border: solid $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
     margin-bottom: 1;
 }
 
 #api-headers:focus {
-    border: solid #7755cc;
-    background: #1e1e36;
+    border: solid $accent;
+    background: $input-bg-focus;
 }
 
 #api-headers .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #api-body-input {
     width: 100%;
     height: 3;
-    background: #1a1a2e;
-    border: solid #332244;
+    background: $input-bg;
+    border: solid $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
     margin-bottom: 1;
 }
 
 #api-body-input:focus {
-    border: solid #7755cc;
-    background: #1e1e36;
+    border: solid $accent;
+    background: $input-bg-focus;
 }
 
 #api-body-input .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #api-btn-row {
@@ -171,5 +171,5 @@ _apiscreen {
 
 #api-back-hint {
     text-align: left;
-    color: #554477;
+    color: $muted;
 }

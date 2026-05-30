@@ -1,7 +1,7 @@
 _obfuscatescreen {
     layout: vertical;
     align: center middle;
-    background: #0d0d0d;
+    background: $bg;
 }
 
 #obf-header {
@@ -20,7 +20,7 @@ _obfuscatescreen {
 #obf-subtitle {
     width: 100%;
     text-align: center;
-    color: #bb88ff;
+    color: $accent2;
     text-style: bold;
     margin: 0 0 1 0;
 }
@@ -34,8 +34,8 @@ _obfuscatescreen {
 #obf-tree-area {
     width: 50%;
     height: 100%;
-    border: tall #332244;
-    background: #1a1a2e;
+    border: tall $border;
+    background: $input-bg;
 }
 
 #obf-tree {
@@ -53,57 +53,57 @@ _obfuscatescreen {
 #obf-search {
     width: 100%;
     height: 3;
-    background: #1a1a2e;
-    border: solid #332244;
+    background: $input-bg;
+    border: solid $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
 }
 
 #obf-search:focus {
-    border: solid #7755cc;
-    background: #1e1e36;
+    border: solid $accent;
+    background: $input-bg-focus;
 }
 
 #obf-search .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #obf-source {
     width: 100%;
     height: 3;
-    background: #1a1a2e;
-    border: solid #332244;
+    background: $input-bg;
+    border: solid $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
     margin-top: 1;
 }
 
 #obf-source:focus {
-    border: solid #7755cc;
-    background: #1e1e36;
+    border: solid $accent;
+    background: $input-bg-focus;
 }
 
 #obf-source .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #obf-output {
     width: 100%;
     height: 3;
-    background: #1a1a2e;
-    border: solid #332244;
+    background: $input-bg;
+    border: solid $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
     margin-top: 1;
 }
 
 #obf-output:focus {
-    border: solid #7755cc;
-    background: #1e1e36;
+    border: solid $accent;
+    background: $input-bg-focus;
 }
 
 #obf-output .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #obf-toggle-row,
@@ -118,46 +118,46 @@ _obfuscatescreen {
 #obf-strings-label,
 #obf-layers-label,
 #obf-junk-label {
-    color: #9988bb;
+    color: $muted-2;
     padding: 0 1;
 }
 
 #obf-expire {
     width: 100%;
     height: 3;
-    background: #1a1a2e;
-    border: solid #332244;
+    background: $input-bg;
+    border: solid $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
     margin-top: 1;
 }
 
 #obf-expire:focus {
-    border: solid #7755cc;
-    background: #1e1e36;
+    border: solid $accent;
+    background: $input-bg-focus;
 }
 
 #obf-expire .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #obf-bind {
     width: 100%;
     height: 3;
-    background: #1a1a2e;
-    border: solid #332244;
+    background: $input-bg;
+    border: solid $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
     margin-top: 1;
 }
 
 #obf-bind:focus {
-    border: solid #7755cc;
-    background: #1e1e36;
+    border: solid $accent;
+    background: $input-bg-focus;
 }
 
 #obf-bind .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #obf-build {
@@ -180,5 +180,5 @@ _obfuscatescreen {
 
 #obf-back-hint {
     text-align: left;
-    color: #554477;
+    color: $muted;
 }

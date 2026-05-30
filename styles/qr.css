@@ -1,37 +1,37 @@
-_searchscreen {
+_qrscreen {
     layout: vertical;
     align: center middle;
     background: $bg;
 }
 
-#search-header {
+#qr-header {
     align: center top;
     width: 100%;
     height: auto;
     margin: 1 0 0 0;
 }
 
-#search-header > Label {
+#qr-header > Label {
     align: center top;
     width: 100%;
     text-align: center;
 }
 
-#search-subtitle {
+#qr-subtitle {
     width: 100%;
     text-align: center;
-    color: $muted;
+    color: $accent2;
     text-style: bold;
     margin: 0 0 1 0;
 }
 
-#search-input-area {
+#qr-input-area {
     width: 100%;
     align: center middle;
     padding: 0 0 1 0;
 }
 
-#search-input {
+#qr-input {
     width: 80%;
     height: 3;
     background: $input-bg;
@@ -40,34 +40,45 @@ _searchscreen {
     color: $fg;
 }
 
-#search-input:focus {
+#qr-input:focus {
     border: tall $accent;
     background: $input-bg-focus;
 }
 
-#search-input .input--placeholder {
+#qr-input .input--placeholder {
     color: $muted;
 }
 
-#search-scroll {
-    height: 1fr;
+#qr-btn-row {
+    width: 80%;
+    height: 3;
+    align: center middle;
+    margin-top: 1;
+}
+
+#qr-btn-row > Button {
+    margin: 0 1;
+}
+
+#qr-scroll {
+    height: 25;
     width: 90%;
     align: center top;
     padding: 0 2;
 }
 
-#search-data {
+#qr-output {
     width: 100%;
 }
 
-#search-footer {
+#qr-footer {
     dock: bottom;
     width: 100%;
     height: auto;
     padding: 0 0 1 2;
 }
 
-#search-back-hint {
+#qr-back-hint {
     text-align: left;
     color: $muted;
 }

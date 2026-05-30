@@ -5,6 +5,9 @@ _commands: dict[str, str] = {
     "/search": "search the web from your terminal!",
     "/obfuscate": "obfuscate python code",
     "/api": "test REST APIs with persistence",
+    "/codec": "encode, decode, hash and generate passwords",
+    "/qr": "generate QR codes from text or URLs",
+    "/theme": "change app theme and colors",
 }
 
 

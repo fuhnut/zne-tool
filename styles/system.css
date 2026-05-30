@@ -1,7 +1,7 @@
 _systemscreen {
     layout: vertical;
     align: center middle;
-    background: #0d0d0d;
+    background: $bg;
 }
 
 #sys-header {
@@ -20,7 +20,7 @@ _systemscreen {
 #sys-subtitle {
     width: 100%;
     text-align: center;
-    color: #7755aa;
+    color: $muted;
     text-style: bold;
     margin: 0 0 1 0;
 }
@@ -45,4 +45,5 @@ _systemscreen {
 
 #sys-back-hint {
     text-align: left;
+    color: $muted;
 }

@@ -1,0 +1,115 @@
+_themescreen {
+    layout: vertical;
+    align: center middle;
+    background: $bg;
+}
+
+#theme-header {
+    align: center top;
+    width: 100%;
+    height: auto;
+    margin: 1 0 0 0;
+}
+
+#theme-header > Label {
+    align: center top;
+    width: 100%;
+    text-align: center;
+}
+
+#theme-subtitle {
+    width: 100%;
+    text-align: center;
+    color: $accent2;
+    text-style: bold;
+    margin: 0 0 1 0;
+}
+
+#theme-body {
+    width: 100%;
+    height: 1fr;
+    padding: 0 2;
+    scrollbar-size: 1 1;
+}
+
+#theme-select-row {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#theme-select {
+    width: 100%;
+    height: 3;
+}
+
+#theme-preview-row {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1;
+}
+
+#theme-preview-box {
+    width: 100%;
+    height: 3;
+    padding: 0 2;
+}
+
+#theme-custom-bg-row,
+#theme-custom-fg-row,
+#theme-custom-accent-row {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#inp-bg,
+#inp-fg,
+#inp-accent {
+    width: 100%;
+    height: 3;
+    background: $input-bg;
+    border: solid $border;
+    padding: 0 2;
+    color: $fg;
+}
+
+#inp-bg:focus,
+#inp-fg:focus,
+#inp-accent:focus {
+    border: solid $accent;
+    background: $input-bg-focus;
+}
+
+#inp-bg .input--placeholder,
+#inp-fg .input--placeholder,
+#inp-accent .input--placeholder {
+    color: $muted;
+}
+
+#theme-btn-row {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#theme-btn-row > Button {
+    margin: 0 1;
+}
+
+#theme-status {
+    width: 100%;
+    margin-bottom: 1;
+}
+
+#theme-footer {
+    dock: bottom;
+    width: 100%;
+    height: auto;
+    padding: 0 0 1 2;
+}
+
+#theme-back-hint {
+    text-align: left;
+    color: $muted;
+}

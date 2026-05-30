@@ -1,0 +1,258 @@
+_codecscreen {
+    layout: vertical;
+    align: center middle;
+    background: $bg;
+}
+
+#codec-header {
+    align: center top;
+    width: 100%;
+    height: auto;
+    margin: 1 0 0 0;
+}
+
+#codec-header > Label {
+    align: center top;
+    width: 100%;
+    text-align: center;
+}
+
+#codec-subtitle {
+    width: 100%;
+    text-align: center;
+    color: $accent2;
+    text-style: bold;
+    margin: 0 0 1 0;
+}
+
+#codec-body {
+    width: 100%;
+    height: 1fr;
+    padding: 0 2;
+    scrollbar-size: 1 1;
+}
+
+#codec-opts-row {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#codec-mode,
+#codec-mode-2 {
+    width: 50%;
+    height: 3;
+    margin: 0 1;
+}
+
+#codec-input {
+    width: 100%;
+    height: 3;
+    background: $input-bg;
+    border: solid $border;
+    padding: 0 2;
+    color: $fg;
+    margin-bottom: 1;
+}
+
+#codec-input:focus {
+    border: solid $accent;
+    background: $input-bg-focus;
+}
+
+#codec-input .input--placeholder {
+    color: $muted;
+}
+
+#codec-act-row {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#codec-act-row > Button {
+    margin: 0 1;
+}
+
+#codec-output {
+    width: 100%;
+    margin-bottom: 1;
+}
+
+#codec-divider-row {
+    width: 100%;
+    height: auto;
+    align: center middle;
+    margin: 1 0;
+}
+
+#codec-divider-label {
+    text-align: center;
+    color: $muted;
+    text-style: bold;
+}
+
+#codec-pwlen {
+    width: 100%;
+    height: 3;
+    background: $input-bg;
+    border: solid $border;
+    padding: 0 2;
+    color: $fg;
+    margin-bottom: 1;
+}
+
+#codec-pwlen:focus {
+    border: solid $accent;
+    background: $input-bg-focus;
+}
+
+#codec-pwlen .input--placeholder {
+    color: $muted;
+}
+
+#codec-pwsym {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#codec-gen-pw {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#codec-pw-output {
+    width: 100%;
+    margin-bottom: 1;
+}
+
+#codec-hash-divider-row {
+    width: 100%;
+    height: auto;
+    align: center middle;
+    margin: 1 0;
+}
+
+#codec-hash-divider-label {
+    text-align: center;
+    color: $muted;
+    text-style: bold;
+}
+
+#codec-hash-input {
+    width: 100%;
+    height: 3;
+    background: $input-bg;
+    border: solid $border;
+    padding: 0 2;
+    color: $fg;
+    margin-bottom: 1;
+}
+
+#codec-hash-input:focus {
+    border: solid $accent;
+    background: $input-bg-focus;
+}
+
+#codec-hash-input .input--placeholder {
+    color: $muted;
+}
+
+#codec-hash-row {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#codec-hash-algo {
+    width: 20;
+    height: 3;
+}
+
+#codec-hash-row > Button {
+    width: 1fr;
+    height: 3;
+}
+
+#codec-hash-output {
+    width: 100%;
+    margin-bottom: 1;
+}
+
+#codec-file-divider-row {
+    width: 100%;
+    height: auto;
+    align: center middle;
+    margin: 1 0;
+}
+
+#codec-file-divider-label {
+    text-align: center;
+    color: $muted;
+    text-style: bold;
+}
+
+#codec-file-pick-row {
+    width: 100%;
+    height: 120;
+    margin-bottom: 1;
+}
+
+#codec-file-tree {
+    width: 100%;
+    height: 100%;
+}
+
+#codec-file-input {
+    width: 100%;
+    height: 3;
+    background: $input-bg;
+    border: solid $border;
+    padding: 0 2;
+    color: $fg;
+    margin-bottom: 1;
+}
+
+#codec-file-input:focus {
+    border: solid $accent;
+    background: $input-bg-focus;
+}
+
+#codec-file-input .input--placeholder {
+    color: $muted;
+}
+
+#codec-file-hash-row {
+    width: 100%;
+    height: 3;
+    margin-bottom: 1;
+}
+
+#codec-file-hash-algo {
+    width: 20;
+    height: 3;
+}
+
+#codec-file-hash-row > Button {
+    width: 1fr;
+    height: 3;
+}
+
+#codec-file-hash-output {
+    width: 100%;
+    margin-bottom: 1;
+}
+
+#codec-footer {
+    dock: bottom;
+    width: 100%;
+    height: auto;
+    padding: 0 0 1 2;
+}
+
+#codec-back-hint {
+    text-align: left;
+    color: $muted;
+}

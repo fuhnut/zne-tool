@@ -1,5 +1,21 @@
+$bg: #0e0e1a;
+$fg: #ccccee;
+$accent: #7755cc;
+$accent2: #bb88ff;
+$border: #332244;
+$border-focus: #7755cc;
+$input-bg: #1a1a2e;
+$input-bg-focus: #1e1e36;
+$hover: #2a2a4e;
+$btn-green: #44ff88;
+$btn-red: #ff4444;
+$btn-text: #ffffff;
+$muted: #554477;
+$muted-2: #9988bb;
+$output-text: #ccccee;
+
 Screen {
-    background: #0d0d0d;
+    background: $bg;
     align: center top;
 }
 

@@ -1,6 +1,6 @@
 Screen {
-    layout: vertical;
-    align: center middle;
+    background: $bg;
+    align: center top;
 }
 
 #logo-area {
@@ -19,7 +19,7 @@ Screen {
 #subtitle {
     width: 100%;
     text-align: center;
-    color: #7755aa;
+    color: $muted;
     margin: 1 0 2 0;
     text-style: italic;
 }
@@ -35,28 +35,29 @@ _searchbar {
     width: 80%;
     height: 3;
     margin: 0 0 1 0;
-    background: #1a1a2e;
-    border: tall #332244;
+    background: $input-bg;
+    border: tall $border;
     padding: 0 2;
-    color: #e0d0ff;
+    color: $fg;
 }
 
 _searchbar:focus {
-    border: tall #7755cc;
-    background: #1e1e36;
+    border: tall $accent;
+    background: $input-bg-focus;
 }
 
 _searchbar .input--placeholder {
-    color: #554477;
+    color: $muted;
 }
 
 #suggestion-list {
     width: 80%;
     align: center top;
-    background: #1a1a2e;
-    border: tall #332244;
+    background: $input-bg;
+    border: tall $border;
     max-height: 8;
-    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-size: 1 1;
     padding: 0;
 }
 
@@ -64,13 +65,13 @@ Button.suggestion-btn {
     width: 100%;
     background: transparent;
     border: none;
-    color: #e0d0ff;
+    color: $fg;
     text-align: left;
     padding: 0 2;
 }
 
 Button.suggestion-btn:hover {
-    background: #2a2a4e;
+    background: $hover;
 }
 
 #quit-area {
@@ -88,8 +89,8 @@ Button.suggestion-btn:hover {
     align: center middle;
     width: auto;
     height: auto;
-    background: #1a1a2e;
-    border: tall #ff4444;
+    background: $input-bg;
+    border: tall $btn-red;
     padding: 1 2;
 }
 
@@ -103,6 +104,6 @@ Button.suggestion-btn:hover {
 #error-msg {
     width: 100%;
     text-align: center;
-    color: #ff6666;
+    color: $btn-red;
     padding: 0 0 1 0;
 }

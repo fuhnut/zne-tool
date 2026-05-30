@@ -11,35 +11,7 @@ from textual.screen import Screen
 from textual.widgets import Label
 
 from core.system import resourcemonitor
-
-_COLOURS = (
-    "#ff1111",
-    "#ff2244",
-    "#ff1166",
-    "#ff0088",
-    "#dd2299",
-    "#bb33aa",
-    "#9922bb",
-    "#8822cc",
-    "#7722dd",
-    "#6622ee",
-    "#5522ff",
-    "#4422ff",
-    "#3322ff",
-    "#4422ff",
-    "#5522ff",
-    "#6622ff",
-    "#7722ff",
-    "#8822ee",
-    "#9922dd",
-    "#bb22cc",
-    "#dd22aa",
-    "#ff1199",
-    "#ff2277",
-    "#ff1155",
-    "#ff1133",
-    "#ff1111",
-)
+from core.theme import gradient_colours
 
 _TITLE_LINES = (
     "███████╗███╗░░██╗███████╗",
@@ -74,8 +46,10 @@ class _systemscreen(Screen):
 
     def _gradient_text(self, line: str, offset: int) -> Text:
         text = Text()
+        colours = gradient_colours()
+        n = len(colours)
         for k, char in enumerate(line):
-            colour = _COLOURS[(k + offset) % 26]
+            colour = colours[(k + offset) % n]
             text.append(char, style=colour)
         return text
 
@@ -256,10 +230,12 @@ class _systemscreen(Screen):
 
     async def _animate_header(self) -> None:
         offset = 0
+        colours = gradient_colours()
+        n = len(colours)
         while True:
             for i, line in enumerate(_TITLE_LINES):
                 self._logo_labels[i].update(self._gradient_text(line, offset))
-            offset = (offset + 1) % 26
+            offset = (offset + 1) % n
             await asyncio.sleep(0.08)
 
     async def _update_stats(self) -> None:
@@ -284,7 +260,7 @@ class _systemscreen(Screen):
             self._back_hint.update(
                 self._gradient_text(
                     "press esc to go back",
-                    offset=int(time.monotonic() * 12) % 26,
+                    offset=int(time.monotonic() * 12) % len(gradient_colours()),
                 )
             )
             await asyncio.sleep(1.0)

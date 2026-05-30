@@ -10,19 +10,6 @@ import uuid
 import zlib
 from pathlib import Path
 
-_PH = {
-    "uid": "__ZNE_UID__",
-    "payload": "__ZNE_PAYLOAD__",
-    "mk": "__ZNE_MK__",
-    "pxk": "__ZNE_PXK__",
-    "hmk": "__ZNE_HMK__",
-    "hmac": "__ZNE_HMAC__",
-    "expire": "__ZNE_EXPIRE__",
-    "bind": "__ZNE_BIND__",
-    "junk": "__ZNE_JUNK__",
-    "strdec": "__ZNE_STRDEC__",
-}
-
 
 def _minify(source: str) -> str:
     b = base64.b64encode(source.encode("utf-8")).decode("ascii")
@@ -155,14 +142,14 @@ if _sys.gettrace()is not None:_sys.settrace(None)
 _t0=_tm.monotonic()
 for _ in range(1000):pass
 if _tm.monotonic()-_t0>2.0:_sys.exit(1)
-__ZNE_EXPIRE__
-__ZNE_BIND__
-__ZNE_JUNK__
-_uid="__ZNE_UID__"
-_raw=_b64.b64decode("__ZNE_PAYLOAD__")
-_mk=_b64.b64decode("__ZNE_MK__")
+__PK_EXPIRE__
+__PK_BIND__
+__PK_JUNK__
+_uid="__PK_UID__"
+_raw=_b64.b64decode("__PK_PAYLOAD__")
+_mk=_b64.b64decode("__PK_MK__")
 _ek=_hl.sha256(_mk+b"enc"+_hl.sha256(_uid.encode()).digest()[:16]).digest()
-_pxk=_b64.b64decode("__ZNE_PXK__")
+_pxk=_b64.b64decode("__PK_PXK__")
 _d=bytes(b^_pxk[i%len(_pxk)]for i,b in enumerate(_raw))
 del _raw,_pxk
 _ks=bytearray();_c=0
@@ -171,14 +158,14 @@ while len(_ks)<len(_d):
  _c+=1
 _d=bytes(b^_ks[i]for i,b in enumerate(_d))
 del _ek,_mk,_ks
-_hmk=_b64.b64decode("__ZNE_HMK__")
-if _hl.sha256(_hmk+_d).hexdigest()!="__ZNE_HMAC__":raise RuntimeError("integrity check failed")
+_hmk=_b64.b64decode("__PK_HMK__")
+if _hl.sha256(_hmk+_d).hexdigest()!="__PK_HMAC__":raise RuntimeError("integrity check failed")
 del _hmk
 _d=_zl.decompress(_d)
 del _zl
 _code=_ma.loads(_d)
 del _d,_ma
-__ZNE_STRDEC__
+__PK_STRDEC__
 _gl={'__name__':'__main__','__file__':_sys.argv[0],'__builtins__':__builtins__}
 exec(_code,_gl)
 """
@@ -276,16 +263,16 @@ def run(
     junk_code = "\n".join(_junk_lines(junk)) if junk else ""
 
     content = VM_TEMPLATE
-    content = content.replace(_PH["uid"], buid)
-    content = content.replace(_PH["payload"], payload_b64)
-    content = content.replace(_PH["mk"], mk_b64)
-    content = content.replace(_PH["pxk"], pxk_b64)
-    content = content.replace(_PH["hmk"], hmac_key_b64)
-    content = content.replace(_PH["hmac"], payload_hmac)
-    content = content.replace(_PH["expire"], expire_snippet)
-    content = content.replace(_PH["bind"], bind_snippet)
-    content = content.replace(_PH["junk"], junk_code)
-    content = content.replace(_PH["strdec"], str_decrypt)
+    content = content.replace("__PK_UID__", buid)
+    content = content.replace("__PK_PAYLOAD__", payload_b64)
+    content = content.replace("__PK_MK__", mk_b64)
+    content = content.replace("__PK_PXK__", pxk_b64)
+    content = content.replace("__PK_HMK__", hmac_key_b64)
+    content = content.replace("__PK_HMAC__", payload_hmac)
+    content = content.replace("__PK_EXPIRE__", expire_snippet)
+    content = content.replace("__PK_BIND__", bind_snippet)
+    content = content.replace("__PK_JUNK__", junk_code)
+    content = content.replace("__PK_STRDEC__", str_decrypt)
 
     for _ in range(layers - 1):
         content = _pack_layer(content)
@@ -323,4 +310,6 @@ def main() -> None:
         layers=args.layers,
         junk=args.junk,
     )
+
+
 # print("done")
